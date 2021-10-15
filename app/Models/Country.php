@@ -8,4 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Country extends Model
 {
     use HasFactory;
+
+    /**
+     * 
+     * the attributes that are mass assignable
+     *
+     * @var array
+     */
+    protected $fillable = ['country_code', 'name'];
+
+    public function states(){
+        return $this->hasMany(State::class);
+    }
 }
